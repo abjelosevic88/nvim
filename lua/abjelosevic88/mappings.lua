@@ -6,6 +6,34 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Save file
+keymap("n", "<C-s>", ":w<CR>", opts)
+
+-- Don't yank with x
+keymap("n", "x", '"_x', opts)
+
+-- Select all
+keymap("n", "<C-a>", "gg<S-v>G", opts)
+
+-- Open file browser
+keymap("n", "<S-h>", "<cmd>Telescope file_browser path=%:p:h<cr>", opts)
+
+-- Open file finder
+keymap("n", "<C-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
+
+-- Hop
+keymap("n", "<C-g>", "<cmd>HopChar2<cr>", opts)
+keymap("n", "<C-b>", "<cmd>HopWord<cr>", opts)
+keymap("n", "<C-e>", "<cmd>HopPattern<cr>", opts)
+
+-- Diagnostics
+keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
+keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
+keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
+keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
+keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
+keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
+
 -- Window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -16,9 +44,15 @@ keymap("n", "<leader>j", "<C-w>j", opts)
 keymap("n", "<leader>k", "<C-w>k", opts)
 keymap("n", "<leader>l", "<C-w>l", opts)
 
+-- Moving  shortcuts
+keymap("n", "J", "5j", opts)
+keymap("n", "K", "5k", opts)
+keymap("n", "<S-C-d>", "5j", opts)
+keymap("n", "<S-C-u>", "5k", opts)
+
 -- Resize
-keymap("n", "<S-C-j>", ":resize -2<CR>", opts)
-keymap("n", "<S-C-k>", ":resize +2<CR>", opts)
+keymap("n", "<S-C-k>", ":resize -2<CR>", opts)
+keymap("n", "<S-C-j>", ":resize +2<CR>", opts)
 keymap("n", "<S-C-l>", ":vertical resize -2<CR>", opts)
 keymap("n", "<S-C-h>", ":vertical resize +2<CR>", opts)
 

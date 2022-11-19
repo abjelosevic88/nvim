@@ -14,7 +14,12 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
 	hijack_netrw = true,
+	auto_close = true,
+	diagnostics = {
+		enable = true,
+	},
 	view = {
+		width = 40,
 		hide_root_folder = true,
 		mappings = {
 			custom_only = false,

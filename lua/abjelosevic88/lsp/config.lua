@@ -10,7 +10,17 @@ for _, sign in ipairs(signs) do
 end
 
 local config = {
-	virtual_text = false,
+	virtual_text = {
+		format = function(diagnostic)
+			if
+				diagnostic.severity == vim.diagnostic.severity.ERROR
+				or diagnostic.severity == vim.diagnostic.severity.WARN
+			then
+				return string.format("%s", diagnostic.message)
+			end
+			return nil
+		end,
+	},
 	signs = {
 		active = signs,
 	},

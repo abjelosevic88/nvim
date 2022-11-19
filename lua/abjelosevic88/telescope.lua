@@ -1,5 +1,6 @@
 local telescope = safe_require("telescope")
 local actions = safe_require("telescope.actions")
+local fb_actions = require("telescope").extensions.file_browser.actions
 
 if not telescope then
 	return
@@ -21,6 +22,13 @@ telescope.setup({
 				["<C-k>"] = actions.move_selection_previous,
 				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
 				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+				["<C-n>"] = fb_actions.create,
+				["<C-o>"] = fb_actions.create_from_prompt,
+				["<C-c>"] = fb_actions.copy,
+				["<C-r>"] = fb_actions.rename,
+				["<C-d>"] = fb_actions.remove,
+				["<C-e>"] = fb_actions.move,
+				["<C-t>"] = fb_actions.change_cwd,
 			},
 			n = {
 				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
@@ -39,3 +47,5 @@ telescope.setup({
 		},
 	},
 })
+
+require("telescope").load_extension("file_browser")
