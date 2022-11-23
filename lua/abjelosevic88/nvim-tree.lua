@@ -14,7 +14,7 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
 	hijack_netrw = true,
-	auto_close = true,
+	update_cwd = true,
 	diagnostics = {
 		enable = true,
 	},

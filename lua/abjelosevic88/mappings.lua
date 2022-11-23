@@ -13,7 +13,7 @@ keymap("n", "<C-s>", ":w<CR>", opts)
 keymap("n", "x", '"_x', opts)
 
 -- Select all
-keymap("n", "<C-a>", "gg<S-v>G", opts)
+keymap("n", "<C-x>", "gg<S-v>G", opts)
 
 -- Open file browser
 keymap("n", "<S-h>", "<cmd>Telescope file_browser path=%:p:h<cr>", opts)
@@ -51,10 +51,10 @@ keymap("n", "<S-C-d>", "5j", opts)
 keymap("n", "<S-C-u>", "5k", opts)
 
 -- Resize
-keymap("n", "<S-C-k>", ":resize -2<CR>", opts)
-keymap("n", "<S-C-j>", ":resize +2<CR>", opts)
-keymap("n", "<S-C-l>", ":vertical resize -2<CR>", opts)
-keymap("n", "<S-C-h>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-k>", ":resize -2<CR>", opts)
+keymap("n", "<C-j>", ":resize +2<CR>", opts)
+keymap("n", "<C-p>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-0>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
@@ -74,4 +74,4 @@ keymap("v", "p", '"_dP', opts)
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-1<CR>gv-gv", opts)

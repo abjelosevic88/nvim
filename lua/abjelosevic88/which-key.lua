@@ -86,6 +86,13 @@ local mappings = {
 		["o"] = { "<cmd>DiffviewOpen<CR>", "Open" },
 		["c"] = { "<cmd>DiffviewClose<CR>", "Close" },
 	},
+	["v"] = {
+		name = "Resize",
+		["j"] = { ":resize -2<CR>", "Resize down" },
+		["k"] = { ":resize +2<CR>", "Resize up" },
+		["h"] = { ":vertical resize -2<CR>", "Resize left" },
+		["l"] = { ":vertical resize +2<CR>", "Resize right" },
+	},
 	["h"] = {
 		name = "Hop",
 		["h"] = { "<cmd>HopChar2<cr>", "2 Chars" },
