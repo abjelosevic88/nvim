@@ -15,16 +15,20 @@ keymap("n", "x", '"_x', opts)
 -- Select all
 keymap("n", "<C-x>", "gg<S-v>G", opts)
 
+-- Auto fix eslint errors
+keymap("n", "<C-c>", "<cmd>EslintFixAll<CR>", opts)
+
 -- Open file browser
 keymap("n", "<S-h>", "<cmd>Telescope file_browser path=%:p:h<cr>", opts)
+
+-- Open file browser
+keymap("n", "<C-e>", "<cmd>Telescope yank_history<cr>", opts)
 
 -- Open file finder
 keymap("n", "<C-f>", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 
 -- Hop
-keymap("n", "<C-g>", "<cmd>HopChar2<cr>", opts)
 keymap("n", "<C-b>", "<cmd>HopWord<cr>", opts)
-keymap("n", "<C-e>", "<cmd>HopPattern<cr>", opts)
 
 -- Diagnostics
 keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
